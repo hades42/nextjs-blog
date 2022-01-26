@@ -3,6 +3,7 @@ import Head from "next/head";
 import Date from "../../components/date";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import utilStyles from "../../components/utils.module.css";
+import Input from "../../try-mdx/input.mdx";
 
 export async function getStaticPaths() {
     const paths = getAllPostIds();
@@ -36,6 +37,7 @@ export default function Post({ postData }) {
                 <div
                     dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
                 />
+                <Input></Input>
             </article>
         </Layout>
     );
