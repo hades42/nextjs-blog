@@ -1,7 +1,34 @@
-export const Thing = () => <>World</>
+---
+title: "This is for Trying MDX"
+date: "2020-01-02"
+summary: "This is the summary testing for MDX"
+tags: ['coding', 'play', 'doStuffs']
+---
 
-# Hello <Thing />
+# Ahihi this is a custome Heading
 
-```js title="something.js"
+<Test>
+    <Something>Hello World </Something>
+</Test> 
+
+a [link](https://example.com), an ![image](./image.png), some *emphasis*,
+something **strong**, and finally a little `<div/>`.  
+**strong**
+
+```javascript file=testing.js highlights=1,3-9
 const ahihi = 1;
+
+export async function getStaticProps({ params }) {
+    const postData = await getPostData(params.id);
+    const mdxSource = await serialize(postData.content);
+    console.log(postData);
+    console.log(mdxSource);
+    return {
+        props: {
+            postData,
+            mdxSource,
+        },
+    };
+}
 ```
+* Ahihi
